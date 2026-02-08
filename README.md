@@ -1,64 +1,70 @@
-# Astro Starter Kit: Blog
+# EONET - Internet Bebas Batas
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
+Landing page modern untuk layanan penyedia internet [EONET](https://eonet.id/), dibangun menggunakan [Astro Framework](https://astro.build/) untuk performa maksimal dan di-deploy ke jaringan global Cloudflare.
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+## Fitur Utama
 
-<!-- dash-content-start -->
+- **Desain Modern:** Menggunakan palet warna vibrant dan efek glassmorphism.
+- **Performa Tinggi:** Dibangun dengan arsitektur Islands Architecture dari Astro.
+- **Responsif:** Tampilan optimal di berbagai perangkat (Desktop, Tablet, Mobile).
+- **Cloudflare Workers:** Deployment edge-native untuk kecepatan akses global.
 
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
+## Tech Stack
 
-Features:
+- **Framework:** [Astro](https://astro.build/)
+- **Styling:** Vanilla CSS (Modern CSS Variables, Gradients, Glassmorphism)
+- **Deployment:** [Cloudflare Pages / Workers](https://workers.cloudflare.com/)
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-- ✅ Built-in Observability logging
+## Struktur Project
 
-<!-- dash-content-end -->
-
-## Getting Started
-
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-starter-template
+```text
+/
+├── public/           # Aset statis
+├── src/
+│   ├── components/   # Komponen UI (Header, Hero, Packages, dll)
+│   ├── layouts/      # Layout utama halaman
+│   ├── pages/        # File halaman (routing berbasis file)
+│   └── styles/       # Global CSS
+└── astro.config.mjs  # Konfigurasi Astro
 ```
 
-A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://astro-blog-starter-template.templates.workers.dev)
+## Cara Menjalankan
 
-## 🚀 Project Structure
+Berikut adalah perintah-perintah yang tersedia untuk pengembangan:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+| Command | Action |
+| :--- | :--- |
+| `npm install` | Menginstall dependensi project |
+| `npm run dev` | Menjalankan server development lokal di `localhost:4321` |
+| `npm run build` | Melakukan build untuk produksi ke folder `./dist/` |
+| `npm run preview` | Melihat preview hasil build secara lokal |
+| `npm run deploy` | Deploy langsung ke Cloudflare menggunakan Wrangler |
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Development
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+```bash
+# Clone repository
+git clone https://github.com/username/eonet.git
+cd eonet
 
-Any static assets, like images, can be placed in the `public/` directory.
+# Install dependencies
+npm install
 
-## 🧞 Commands
+# Jalankan server development
+npm run dev
+```
 
-All commands are run from the root of the project, from a terminal:
+### Deployment
 
-| Command                           | Action                                           |
-| :-------------------------------- | :----------------------------------------------- |
-| `npm install`                     | Installs dependencies                            |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`      |
-| `npm run build`                   | Build your production site to `./dist/`          |
-| `npm run preview`                 | Preview your build locally, before deploying     |
-| `npm run astro ...`               | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`         | Get help using the Astro CLI                     |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare        |
-| `npm wrangler tail`               | View real-time logs for all Workers              |
+Project ini dikonfigurasi untuk deployment ke Cloudflare.
 
-## 👀 Want to learn more?
+```bash
+# Build dan Deploy
+npm run deploy
+```
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Pastikan Anda telah login ke Cloudflare menggunakan `npx wrangler login` jika melakukan deploy dari lokal.
 
-## Credit
+## Kredit
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Dikembangkan untuk [portal online](https://portalonline.id/).
